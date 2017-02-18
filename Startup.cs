@@ -40,7 +40,6 @@ namespace aspaur
 
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
 
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
                     HotModuleReplacement = true // Aurelia Webpack Plugin HMR currently has issues. Leave this set to false.
@@ -50,6 +49,8 @@ namespace aspaur
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
 
